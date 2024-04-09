@@ -100,7 +100,8 @@ def video2video(prompt, video, where_to_log, cfg_v2v, model_v2v, square=True):
 
     now = datetime.datetime.now()
     now = str(now.time()).replace(":", "_").replace(".", "_")
-    name = prompt[:100].replace(" ", "_") + "_" + now
+    # name = prompt[:100].replace(" ", "_") + "_" + now
+    name = 'output'
     enhanced_video_mp4 = opj(where_to_log, name+"_enhanced.mp4")
 
     video_frames = imageio.mimread(video)
