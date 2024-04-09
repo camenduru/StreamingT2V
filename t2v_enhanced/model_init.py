@@ -18,7 +18,7 @@ from inference_utils import legacy_transformation, remove_value, CustomCLI
 
 # For Stage-3
 import sys
-sys.path.append(Path(__file__).parent / "thirdparty")
+# sys.path.append(Path(__file__).parent / "thirdparty")
 from modelscope.pipelines import pipeline
 
 
