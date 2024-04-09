@@ -69,7 +69,7 @@ def init_svd(device="cuda"):
 
 # Initialize StreamingT2V model.
 def init_streamingt2v_model(ckpt_file, result_fol):
-    config_file = "configs/text_to_video/config.yaml"
+    config_file = "/content/StreamingT2V/t2v_enhanced/configs/text_to_video/config.yaml"
     sys.argv = sys.argv[:1]
     with tempfile.TemporaryDirectory() as tmpdirname:
         storage_fol = Path(tmpdirname)
@@ -88,7 +88,7 @@ def init_streamingt2v_model(ckpt_file, result_fol):
         sys.argv.append("--result_fol")
         sys.argv.append(result_fol.as_posix())
         sys.argv.append("--config")
-        sys.argv.append("configs/inference/inference_long_video.yaml")
+        sys.argv.append("/content/StreamingT2V/t2v_enhanced/configs/inference/inference_long_video.yaml")
         sys.argv.append("--data.prompt_cfg.type=prompt")
         sys.argv.append(f"--data.prompt_cfg.content='test prompt for initialization'")
         sys.argv.append("--trainer.devices=1")
